@@ -8,8 +8,6 @@ trigger:
 
 pool:
   vmImage: ubuntu-latest
-  stages:
-stage:dev
 
 steps:
   - script: echo Hello, world!
