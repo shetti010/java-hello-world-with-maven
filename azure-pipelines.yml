@@ -8,9 +8,11 @@ trigger:
 
 pool:
   vmImage: ubuntu-latest
+  stages:
+stage:dev
 
 steps:
-- script: echo Hello, world!
+  - script: echo Hello, world!
   displayName: 'Run a one-line script'
 
 - script: |
@@ -23,9 +25,13 @@ steps:
       Contents: '**/*.war'
       TargetFolder: '$(build.artifactstagingdirectory)'
       CleanTargetFolder: true
+
 - task: PublishBuildArtifacts@1
   inputs:
     PathtoPublish: '$(Build.ArtifactStagingDirectory)'
     ArtifactName: 'drop'
     publishLocation: 'Container'
+stage: PROD
+stage:UAT
+
   
